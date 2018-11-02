@@ -1,0 +1,18 @@
+[package]
+name = "test_trojan"
+version = "0.1.0"
+authors = ["noah"]
+
+[dependencies]
+irc="0.13.5"
+daemonize="*"
+
+[features]
+system-alloc = []
+
+[profile.release]
+panic = "abort"
+lto = true
+codegen-units = 1
+incremental = false
+opt-level = "z"
